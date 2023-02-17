@@ -6,7 +6,7 @@ import CartItem from "./CartItem";
 import Checkout from "./Checkout";
 
 
-//the same names used for accessing the data should be used for passing down the data(AvailableMeals)
+//the same names used for accessing the data should be used for passing down the data(AvailableGames)
 const Cart = (props) => {
     const [isCheckout, setIsCheckout] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,7 +31,7 @@ const Cart = (props) => {
 
     const submitOrderHandler = async userData => {
         setIsSubmitting(true);
-        await fetch('https://order-food-app-7d880-default-rtdb.europe-west1.firebasedatabase.app/orders.json', {
+        await fetch('https://ps-games-app-default-rtdb.europe-west1.firebasedatabase.app/orders.json', {
             method: 'POST',
             body: JSON.stringify({
                 user: userData,

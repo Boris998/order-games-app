@@ -1,11 +1,11 @@
 import {useRef, useState} from "react";
-import classes from './MealItemForm.module.css';
+import classes from './GameItemForm.module.css';
 import Input from "../../UI/Input";
 
 //when we have to evaluate js obj we use two curly braces --> {{}}
 //the props in the <Input/> are default props that can be added to any Input element
 
-const MealItemForm = (props) => {
+const GameItemForm = (props) => {
     const [amountIsValid, setAmountIsValid] = useState(true);
 
     //ref same as 2 way binding--> refs received in the Input component
@@ -42,4 +42,4 @@ const MealItemForm = (props) => {
     </form>
 }
 
-export default MealItemForm;
+export default GameItemForm;

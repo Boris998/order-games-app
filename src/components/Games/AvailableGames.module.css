@@ -1,22 +1,22 @@
-.meals {
+.games {
   max-width: 60rem;
   width: 90%;
   margin: 2rem auto;
-  animation: meals-appear 1s ease-out forwards;
+  animation: games-appear 1s ease-out forwards;
 }
 
-.meals ul {
+.games ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.mealsLoading{
+.gamesLoading{
   text-align: center;
   color: whitesmoke;
 }
 
-@keyframes meals-appear {
+@keyframes games-appear {
   from {
     opacity: 0;
     transform: translateY(3rem);

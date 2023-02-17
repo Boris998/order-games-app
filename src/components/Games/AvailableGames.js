@@ -1,17 +1,17 @@
-import classes from './AvailableMeals.module.css';
 import Card from "../UI/Card";
-import MealItem from "./MealItem/MealItem";
+import classes from "./AvailableGames.module.css";
+import GameItem from "./MealItem/GameItem";
 import {useEffect, useState} from "react";
 import Loading from "../UI/Loading";
 
-const AvailableMeals = () => {
-    const [meals, setMeals] = useState([]);
+const AvailableGames = () => {
+    const [games, setGames] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [httpError, setHttpError] = useState(null);
 
     useEffect(() => {
-        const fetchMeals = async () => {
-            const response = await fetch('https://order-food-app-7d880-default-rtdb.europe-west1.firebasedatabase.app/meals.json');
+        const fetchGames = async () => {
+            const response = await fetch('https://ps-games-app-default-rtdb.europe-west1.firebasedatabase.app/games.json');
 
             if (!response.ok) {
                 throw new Error('sth went wrong');
@@ -19,10 +19,10 @@ const AvailableMeals = () => {
 
             const responseData = await response.json();
 
-            const loadedMeals = [];
+            const loadedGames = [];
 
             for (const keyID in responseData) {
-                loadedMeals.push({
+                loadedGames.push({
                     id: keyID,
                     name: responseData[keyID].name,
                     description: responseData[keyID].description,
@@ -30,12 +30,12 @@ const AvailableMeals = () => {
                 });
             }
 
-            setMeals(loadedMeals);
+            setGames(loadedGames);
             setIsLoading(false);
         };
 
         try {
-            fetchMeals();
+            fetchGames();
         } catch (error) {
             setIsLoading(false);
             setHttpError(error.message);
@@ -48,25 +48,25 @@ const AvailableMeals = () => {
     if (httpError) return <Loading/>
 
 
-    const mealsList = meals.map(meal =>
-        <MealItem
-            key={meal.id}
-            id={meal.id}
-            name={meal.name}
-            description={meal.description}
-            price={meal.price}
+    const gamesList = games.map(game =>
+        <GameItem
+            key={game.id}
+            id={game.id}
+            name={game.name}
+            description={game.description}
+            price={game.price}
         />
     );
 
     return (
-        <section className={classes.meals}>
+        <section className={classes.games}>
             <Card>
                 <ul>
-                    {mealsList}
+                    {gamesList}
                 </ul>
             </Card>
         </section>
     );
 };
 
-export default AvailableMeals;
+export default AvailableGames;

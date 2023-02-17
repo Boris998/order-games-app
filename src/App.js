@@ -1,6 +1,6 @@
 import Header from "./components/Layout/Header";
 import {useState} from "react";
-import Meals from "./components/Meals/Meals";
+import Games from "./components/Games/Games";
 import Cart from "./components/Cart/Cart";
 import CartProvider from "./store/CartProvider";
 
@@ -19,7 +19,7 @@ const App = () => {
             {cartIsShown && <Cart onClose={hideCartIsShownHandler}/>}
             <Header onShowCart={showCartIsShownHandler}/>
             <main>
-                <Meals/>
+                <Games/>
             </main>
         </CartProvider>
     );
