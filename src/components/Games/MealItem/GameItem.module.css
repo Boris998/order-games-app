@@ -6,6 +6,10 @@
   border-bottom: 1px solid #ccc;
 }
 
+.game .facts {
+  width: 100vh;
+}
+
 .game h3 {
   margin: 0 0 0.5vh 0;
 }
@@ -15,10 +19,23 @@
 }
 
 .price {
-  margin-top: 1vh;
+  margin: 5vh 0 0.5vh 9vh;
   font-weight: bold;
   color: blueviolet;
-  font-size: 1.25rem;
+  font-size: 1.7rem;
+}
+
+.game .cover{
+  height: 100%;
+  width: 100%;
+  margin-left: 10vh;
+  opacity: 0.8;
+}
+
+.game img{
+  height: 250px;
+  width: 200px;
+  border-radius: 15px;
 }
 
 /*.games {

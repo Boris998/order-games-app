@@ -27,6 +27,7 @@ const AvailableGames = () => {
                     name: responseData[keyID].name,
                     description: responseData[keyID].description,
                     price: responseData[keyID].price,
+                    coverImg: responseData[keyID].coverImg,
                 });
             }
 
@@ -55,6 +56,7 @@ const AvailableGames = () => {
             name={game.name}
             description={game.description}
             price={game.price}
+            coverImg={game.coverImg}
         />
     );
 

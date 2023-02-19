@@ -16,17 +16,21 @@ const GameItem = (props) => {
             id: props.id,
             name: props.name,
             price: props.price,
+            coverImg: props.coverImg,
             amount: amount
         });
     }
 
     return <li className={classes.game}>
-        <div>
+        <div className={classes.facts}>
             <h3>{props.name}</h3>
             <div className={classes.description}>{props.description}</div>
-            <div className={classes.price}>{price}</div>
+        </div>
+        <div className={classes.cover}>
+            <img src={props.coverImg} alt='cover'/>
         </div>
         <div>
+            <div className={classes.price}>{price}</div>
             <GameItemForm id={props.id} onAddToCart={addToCardHandler}></GameItemForm>
         </div>
     </li>
