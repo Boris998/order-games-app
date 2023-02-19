@@ -29,14 +29,20 @@
   height: 100%;
   width: 100%;
   margin-left: 10vh;
-  opacity: 0.8;
 }
 
-.game img{
+.game .cover img{
   height: 250px;
   width: 200px;
   border-radius: 15px;
+  opacity: 0.6;
 }
+
+.game .cover img:hover{
+  opacity: 1;
+}
+
+
 
 /*.games {
   max-width: 60rem;
